@@ -1,4 +1,4 @@
-package com.example.Controller;
+package com.example.OSPS;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,13 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/OSPS")
 public class MyController {
-
-    @GetMapping("/register")
-    public ModelAndView register() {
-        ModelAndView modelAndView = new ModelAndView("register");
-        // 可以添加需要的模型屬性
-        return modelAndView;
-    }
     @GetMapping("/login")
     public ModelAndView getAll(){
         ModelAndView modelAndView = new ModelAndView("login");

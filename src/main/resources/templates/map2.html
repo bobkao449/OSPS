@@ -10,7 +10,6 @@
     <!--    <script src="../PS_icon.js"></script>-->
 </head>
 <body>
-    <button onclick="window.location.href = 'http://localhost:8080/OSPS/homepage';">homepage</button>
 <div id="map" style="height: 100vh; width: 100vw">
     <script>
         console.log(icons)
@@ -64,9 +63,8 @@
 
                 var pointJSON = L.geoJSON(collection, {
                     onEachFeature: (feature, layer) => {
-                        let carStatus = feature.properties['是否有車'] ? '有車' : '沒車';
                         layer.bindPopup('車格種類:' + feature.properties['車位種類'] + '<br>車格編號: ' +
-                            feature.properties['車格編號'] + '<br>' + '是否有車: ' + carStatus);
+                            feature.properties['車格編號'] + '<br>' + '是否有車: ' + feature.properties['是否有車']);
                         if (feature.properties['是否有車']) {
                             layer.setIcon(icons[1].icon);
                         } else {
